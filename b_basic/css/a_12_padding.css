@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/* a_12_padding.css */
+
+#wrap {
+ width: 900px; height: 2000px;
+ margin: 0 auto; 
+ background-color: #eee;
+}
+
+.part {
+  width: 95%; height: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.part > div {
+  float: left;
+  width: 100px; height: 100px;
+  background-color: #acf;
+  /* 
+  구형 브라우저에서는 background-image기능이 안먹힐수도 있기 때문에
+  background-color랑 image를 같이 남겨 두는것도 괜찮은 방법
+  */
+  background-image: linear-gradient(45deg, #acf, #fda);
+}
+
+/* 
+.padding_01 {width: 200px; height: 200px;} 
+이렇게만 작성하면 css 선택자 우선순위에서 .part > div 에 밀리기 때문에 width 값과 height값이 먹히지 않는다 
+*/
+.part .padding_01 {
+  width: 200px; height: 200px;
+}
+.padding_02 {padding: 50px;}
+.part .padding_03 {width: 200px; height: 200px;}
+.padding_inner {
+  width: 100px; height: 100px; 
+  margin: 0 auto;
+  margin-top: 50px;
+  /* color:#fff; 
+  background-color: #a5a;  */
+}
+.part .padding_04 {
+  width: 60px; height: 60px;
+  padding: 20px;
+}
+.padding_05 {
+  padding: 20px;
+  box-sizing: border-box;
+  /* box-sizing: border-box or content-box 두가지가 있음 */
+}
+
+/* ------------------------------------------------------------------------ */
+
+.none {display: none;}
+.more_p_01 {padding: 20px;}
+.more_p_02 {padding: 20px 40px;}
+.more_p_03 {padding: 10px 20px 40px;}
+.more_p_04 {padding: 20px 30px 40px 10px;}
+.more_p_05 {padding: 30px; padding-left: 50px;}
+.more_p_06 {padding-top: 10px; padding-right: 20px; padding-bottom: 30px; padding-left: 50px;}
+.more_p_07 {padding-left: 50px; padding-left: 80px;}
+.more_p_08 {margin: auto; padding: auto;}
+.more_p_09 {margin-top: -50px; margin-left: -10px;}
+.more_p_10 {padding-top: -150px;}
+/* margin에는 마이너스 값이 적용 되지만 padding에는 마이너스 값이 적용되지 않음 */
